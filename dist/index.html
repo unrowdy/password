@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Password Generator</title>
+        <link rel="stylesheet" href="default.css">
+        <script src="prism.js"></script>
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div class="card">
+            <h2>Password Generator</h2>
+            <p>Always includes at least one lowercase letter, uppercase letter,
+                number, and special character.</p>
+            <label for="allow">Allowed special characters:</label>
+            <input id="allow" />
+            <label for="length">Password length:</label>
+            <input id="length" />
+            <p>Password is generated locally. You are encouraged to check the
+                <a href="https://github.com/unrowdy/password">source code</a>
+                before you trust it.</p>
+            <pre><code class="language-password" id="res"></code></pre>
+            <p class="buttons">
+                <button id="gen">Regen</button>
+                <button class="button-primary" id="copy">Copy</button>
+            </p>
+        </div>
+    </body>
+</html>
