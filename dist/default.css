@@ -117,10 +117,8 @@ button:focus, input:focus {
 }
 label {
   color: var(--label);
-  display: block;
-  margin-top: 16px;
 }
-input, select, textarea {
+input:not([type="checkbox"]), select, textarea {
   color: inherit;
   box-sizing: border-box;
   width: 100%;
@@ -130,6 +128,16 @@ input, select, textarea {
   border-radius: var(--radius);
   display: block;
   margin-bottom: 16px;
+}
+
+input[type="checkbox"] {
+  height: 16px;
+  width: 16px;
+  accent-color: var(--button);
+}
+
+input:disabled {
+  color: var(--gray-4);
 }
 
 pre, code {

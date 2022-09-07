@@ -9,6 +9,8 @@ charset.digit = '0123456789';
 charset.symbol = '!"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~'; // all the ASCII special characters
 charset.all = charset.lowalpha + charset.upalpha + charset.digit + charset.symbol;
 
+var prior = '';
+
 function generate(len) {
     var needs = ['lowalpha', 'upalpha', 'digit'];
 
@@ -65,6 +67,20 @@ window.addEventListener('load', function() {
         charset.all = charset.lowalpha + charset.upalpha + charset.digit + charset.symbol;
         regen();
     });
+    
+    document.getElementById('url').addEventListener('change', function() {
+        if(this.checked) {
+            // save the old value temporarily
+            prior = document.getElementById('allow').value;
+            document.getElementById('allow').value = '-._~';
+            document.getElementById('allow').disabled = true;
+        } else {
+            document.getElementById('allow').value = prior;
+            document.getElementById('allow').disabled = false;
+        }
+        document.getElementById('allow').dispatchEvent(new Event('change'));
+        document.getElementById('url').blur();
+    });
 
     document.getElementById('length').addEventListener('change', function() {
         regen();
@@ -81,8 +97,9 @@ window.addEventListener('load', function() {
         document.getElementById('copy').blur();
     });
 
-    document.getElementById('length').value = 16;
     document.getElementById('allow').value = charset.symbol;
+    document.getElementById('url').checked = false;
+    document.getElementById('length').value = 16;
     Prism.languages.password = {
         'number': /\d+/,
         'punctuation': /[^a-zA-Z\d]+/
