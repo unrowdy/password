@@ -1,4 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&family=Fira+Mono&display=swap');
+@font-face {
+  font-family: "Rubik";
+  src: url('fonts/Rubik-Regular.subset.woff2') format('woff2');
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Rubik";
+  src: url('fonts/Rubik-Medium.subset.woff2') format('woff2');
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Fira Mono";
+  src: url('fonts/FiraMono-Regular.subset.woff2') format('woff2');
+  font-weight: normal;
+}
 
 /* normalize.css */
 html {
