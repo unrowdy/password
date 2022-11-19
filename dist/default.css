@@ -22,10 +22,7 @@ html {
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
 }
-a {
-	background-color: transparent;
-}
-pre, code {
+pre {
 	font-size: 1em;
 }
 button, input {
@@ -34,17 +31,6 @@ button, input {
 	line-height: 1.15;
 	margin: 0;
 	overflow: visible;
-}
-button {
-	text-transform: none;
-	-webkit-appearance: button;
-}
-button::-moz-focus-inner {
-	border-style: none;
-	padding: 0;
-}
-button:-moz-focusring {
-	outline: 1px dotted ButtonText;
 }
 
 
@@ -56,7 +42,6 @@ button:-moz-focusring {
 	--gray-7: #e8e8e8;
 	--gray-8: #ffffff;
 	--red-4: #ba545b;
-	--red-5: #e17b7f;
 	--cyan-4: #098285;
 	--cyan-5: #15a9ae;
 	--cyan-6: #59d2d7;
@@ -70,7 +55,6 @@ button:-moz-focusring {
 	--button2: var(--gray-6);
 	--input: var(--gray-7);
 	--label: var(--gray-3);
-	--border: var(--gray-7);
 	--selection: var(--cyan-6);
 	--code-0: var(--gray-7);
 	--code-2: var(--gray-4);
@@ -125,7 +109,7 @@ button {
 	border: none;
 	border-radius: var(--radius);
 }
-button:focus, input:focus {
+button:focus, input:focus, a:focus {
 	outline: 2px solid var(--selection);
 }
 .button-primary {
@@ -166,9 +150,6 @@ pre, code {
 pre {
 	overflow: auto;
 }
-code {
-	padding: 2px 6px;
-}
 pre > code {
 	display: block;
 	width: max-content;
@@ -178,10 +159,9 @@ pre > code {
 }
 
 
-/* prism.js */
-.token.punctuation {
+.punctuation {
 	color: var(--code-2);
 }
-.token.number {
+.number {
 	color: var(--code-6);
 }

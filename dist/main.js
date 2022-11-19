@@ -61,10 +61,10 @@ function highlight(element) {
 
 	function replacer(match, p1, p2) {
 		if(p1 !== undefined) {
-			return `<span class="token number">${match}</span>`;
+			return `<span class="number">${match}</span>`;
 		}
 		if (p2 !== undefined) {
-			return `<span class="token punctuation">${match}</span>`;
+			return `<span class="punctuation">${match}</span>`;
 		}
 	}
 
