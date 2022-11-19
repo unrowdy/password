@@ -55,10 +55,26 @@ function generate(len) {
     return password.join('');
 }
 
+function highlight(element) {
+    const string = element.innerText;
+    const pattern = /(\d+)|([^a-zA-Z\d]+)/g;
+
+    function replacer(match, p1, p2) {
+        if(p1 !== undefined) {
+            return `<span class="token number">${match}</span>`;
+        }
+        if (p2 !== undefined) {
+            return `<span class="token punctuation">${match}</span>`;
+        }
+    }
+
+    element.innerHTML = string.replace(pattern, replacer);
+}
+
 function regen() {
     var len = parseInt(document.getElementById('length').value);
     document.getElementById('res').textContent = generate(len);
-    Prism.highlightElement(document.getElementById('res'));
+    highlight(document.getElementById('res'));
 }
 
 window.addEventListener('load', function() {
@@ -67,7 +83,7 @@ window.addEventListener('load', function() {
         charset.all = charset.lowalpha + charset.upalpha + charset.digit + charset.symbol;
         regen();
     });
-    
+
     document.getElementById('url').addEventListener('change', function() {
         if(this.checked) {
             // save the old value temporarily
@@ -100,9 +116,5 @@ window.addEventListener('load', function() {
     document.getElementById('allow').value = charset.symbol;
     document.getElementById('url').checked = false;
     document.getElementById('length').value = 16;
-    Prism.languages.password = {
-        'number': /\d+/,
-        'punctuation': /[^a-zA-Z\d]+/
-    };
     regen();
 });
