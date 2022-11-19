@@ -1,180 +1,180 @@
 @font-face {
-  font-family: "Rubik";
-  src: url('fonts/Rubik-Regular.subset.woff2') format('woff2');
-  font-weight: normal;
-  font-display: swap;
+	font-family: "Rubik";
+	src: url('fonts/Rubik-Regular.subset.woff2') format('woff2');
+	font-weight: normal;
+	font-display: swap;
 }
 @font-face {
-  font-family: "Rubik";
-  src: url('fonts/Rubik-Medium.subset.woff2') format('woff2');
-  font-weight: 500;
-  font-display: swap;
+	font-family: "Rubik";
+	src: url('fonts/Rubik-Medium.subset.woff2') format('woff2');
+	font-weight: 500;
+	font-display: swap;
 }
 @font-face {
-  font-family: "Fira Mono";
-  src: url('fonts/FiraMono-Regular.subset.woff2') format('woff2');
-  font-weight: normal;
-  font-display: swap;
+	font-family: "Fira Mono";
+	src: url('fonts/FiraMono-Regular.subset.woff2') format('woff2');
+	font-weight: normal;
+	font-display: swap;
 }
 
 /* normalize.css */
 html {
-  line-height: 1.15;
-  -webkit-text-size-adjust: 100%;
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
 }
 a {
-  background-color: transparent;
+	background-color: transparent;
 }
 pre, code {
-  font-size: 1em;
+	font-size: 1em;
 }
 button, input {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-  overflow: visible;
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
+	overflow: visible;
 }
 button {
-  text-transform: none;
-  -webkit-appearance: button;
+	text-transform: none;
+	-webkit-appearance: button;
 }
 button::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
+	border-style: none;
+	padding: 0;
 }
 button:-moz-focusring {
-  outline: 1px dotted ButtonText;
+	outline: 1px dotted ButtonText;
 }
 
 
 :root {
-  --gray-2: #2e2e2e;
-  --gray-3: #4e4e4e;
-  --gray-4: #707070;
-  --gray-6: #bebebe;
-  --gray-7: #e8e8e8;
-  --gray-8: #ffffff;
-  --red-4: #ba545b;
-  --red-5: #e17b7f;
-  --cyan-4: #098285;
-  --cyan-5: #15a9ae;
-  --cyan-6: #59d2d7;
+	--gray-2: #2e2e2e;
+	--gray-3: #4e4e4e;
+	--gray-4: #707070;
+	--gray-6: #bebebe;
+	--gray-7: #e8e8e8;
+	--gray-8: #ffffff;
+	--red-4: #ba545b;
+	--red-5: #e17b7f;
+	--cyan-4: #098285;
+	--cyan-5: #15a9ae;
+	--cyan-6: #59d2d7;
 
-  --page: var(--gray-7);
-  --card: var(--gray-8);
-  --heading: var(--cyan-5);
-  --text: var(--gray-2);
-  --link: var(--cyan-5);
-  --button: var(--cyan-5);
-  --button2: var(--gray-6);
-  --input: var(--gray-7);
-  --label: var(--gray-3);
-  --border: var(--gray-7);
-  --selection: var(--cyan-6);
-  --code-0: var(--gray-7);
-  --code-2: var(--gray-4);
-  --code-4: var(--cyan-4);
-  --code-6: var(--red-4);
+	--page: var(--gray-7);
+	--card: var(--gray-8);
+	--heading: var(--cyan-5);
+	--text: var(--gray-2);
+	--link: var(--cyan-5);
+	--button: var(--cyan-5);
+	--button2: var(--gray-6);
+	--input: var(--gray-7);
+	--label: var(--gray-3);
+	--border: var(--gray-7);
+	--selection: var(--cyan-6);
+	--code-0: var(--gray-7);
+	--code-2: var(--gray-4);
+	--code-4: var(--cyan-4);
+	--code-6: var(--red-4);
 
-  --radius: 4px;
+	--radius: 4px;
 }
 
 body {
-  color: var(--text);
-  background-color: var(--page);
-  font-size: 16px;
-  font-family: 'Rubik', sans-serif;
-  line-height: 1.5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
+	color: var(--text);
+	background-color: var(--page);
+	font-size: 16px;
+	font-family: 'Rubik', sans-serif;
+	line-height: 1.5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	margin: 0;
 }
 .card {
-  margin: 12px;
-  padding: 8px 24px;
-  background-color: var(--card);
-  border-radius: var(--radius);
-  max-width: 400px;
+	margin: 12px;
+	padding: 8px 24px;
+	background-color: var(--card);
+	border-radius: var(--radius);
+	max-width: 400px;
 }
 h2 {
-  color: var(--heading);
-  font-weight: 500;
-  margin: 16px 0;
-  font-size: 28px;
+	color: var(--heading);
+	font-weight: 500;
+	margin: 16px 0;
+	font-size: 28px;
 }
 a {
-  color: var(--link);
+	color: var(--link);
 }
 ::selection {
 	background: var(--selection);
 }
 
 .buttons {
-  display: flex;
-  justify-content: space-around;
-  padding: 8px 0;
+	display: flex;
+	justify-content: space-around;
+	padding: 8px 0;
 }
 button {
-  min-width: 88px;
-  padding: 8px 12px;
-  color: var(--label);
-  background-color: var(--button2);
-  border: none;
-  border-radius: var(--radius);
+	min-width: 88px;
+	padding: 8px 12px;
+	color: var(--label);
+	background-color: var(--button2);
+	border: none;
+	border-radius: var(--radius);
 }
 button:focus, input:focus {
-  outline: 2px solid var(--selection);
+	outline: 2px solid var(--selection);
 }
 .button-primary {
-  color: var(--card);
-  background-color: var(--button);
+	color: var(--card);
+	background-color: var(--button);
 }
 label {
-  color: var(--label);
+	color: var(--label);
 }
 input:not([type="checkbox"]), select, textarea {
-  color: inherit;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 8px;
-  background-color: var(--input);
-  border: none;
-  border-radius: var(--radius);
-  display: block;
-  margin-bottom: 16px;
+	color: inherit;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 8px;
+	background-color: var(--input);
+	border: none;
+	border-radius: var(--radius);
+	display: block;
+	margin-bottom: 16px;
 }
 
 input[type="checkbox"] {
-  height: 16px;
-  width: 16px;
-  accent-color: var(--button);
+	height: 16px;
+	width: 16px;
+	accent-color: var(--button);
 }
 
 input:disabled {
-  color: var(--gray-4);
+	color: var(--gray-4);
 }
 
 pre, code {
-  font-family: 'Fira Mono', monospace;
-  color: var(--code-4);
-  background: var(--code-0);
-  border-radius: var(--radius);
+	font-family: 'Fira Mono', monospace;
+	color: var(--code-4);
+	background: var(--code-0);
+	border-radius: var(--radius);
 }
 pre {
 	overflow: auto;
 }
 code {
-  padding: 2px 6px;
+	padding: 2px 6px;
 }
 pre > code {
 	display: block;
 	width: max-content;
 	padding: 16px;
-  font-size: 24px;
-  margin: auto;
+	font-size: 24px;
+	margin: auto;
 }
 
 

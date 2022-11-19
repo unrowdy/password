@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Password Generator</title>
-        <meta name="description" content="Generate passwords that will meet requirements">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'">
-        <link rel="stylesheet" href="default.css">
-        <script src="main.js"></script>
-        <link rel="preload" href="fonts/Rubik-Medium.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-        <link rel="preload" href="fonts/Rubik-Regular.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-        <link rel="preload" href="fonts/FiraMono-Regular.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    </head>
-    <body>
-        <div class="card">
-            <h2>Password Generator</h2>
-            <p>Always includes at least one lowercase letter, uppercase letter,
-                number, and special character.</p>
-            <p>
-                <label for="allow">Allowed special characters:</label><br>
-                <input id="allow">
-            </p>
-            <p>
-                <input type="checkbox" id="url">
-                <label for="url">URL safe characters only</label>
-            </p>
-            <p>
-                <label for="length">Password length:</label><br>
-                <input id="length">
-            </p>
-            <p>Password is generated locally. You are encouraged to check the
-                <a href="https://github.com/unrowdy/password">source code</a>
-                before you trust it.</p>
-            <pre><code class="language-password" id="res"> </code></pre>
-            <p class="buttons">
-                <button id="gen">Regen</button>
-                <button class="button-primary" id="copy">Copy</button>
-            </p>
-        </div>
-    </body>
+	<head>
+		<meta charset="utf-8">
+		<title>Password Generator</title>
+		<meta name="description" content="Generate passwords that will meet requirements">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'">
+		<link rel="stylesheet" href="default.css">
+		<script src="main.js"></script>
+		<link rel="preload" href="fonts/Rubik-Medium.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="fonts/Rubik-Regular.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="preload" href="fonts/FiraMono-Regular.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="card">
+			<h2>Password Generator</h2>
+			<p>Always includes at least one lowercase letter, uppercase letter,
+				number, and special character.</p>
+			<p>
+				<label for="allow">Allowed special characters:</label><br>
+				<input id="allow">
+			</p>
+			<p>
+				<input type="checkbox" id="url">
+				<label for="url">URL safe characters only</label>
+			</p>
+			<p>
+				<label for="length">Password length:</label><br>
+				<input id="length">
+			</p>
+			<p>Password is generated locally. You are encouraged to check the
+				<a href="https://github.com/unrowdy/password">source code</a>
+				before you trust it.</p>
+			<pre><code class="language-password" id="res"> </code></pre>
+			<p class="buttons">
+				<button id="gen">Regen</button>
+				<button class="button-primary" id="copy">Copy</button>
+			</p>
+		</div>
+	</body>
 </html>
