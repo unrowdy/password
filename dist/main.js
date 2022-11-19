@@ -117,4 +117,18 @@ window.addEventListener('load', function() {
 	document.getElementById('url').checked = false;
 	document.getElementById('length').value = 16;
 	regen();
+
+	document.getElementById('light-sw').addEventListener('click', function() {
+		document.documentElement.className = 'light';
+		if (window.localStorage) {
+			localStorage.setItem('theme', 'light');
+		}
+	});
+
+	document.getElementById('dark-sw').addEventListener('click', function() {
+		document.documentElement.className = 'dark';
+		if (window.localStorage) {
+			localStorage.setItem('theme', 'dark');
+		}
+	});
 });

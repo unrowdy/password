@@ -5,14 +5,51 @@
 		<title>Password Generator</title>
 		<meta name="description" content="Generate passwords that will meet requirements">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; script-src 'self'; font-src 'self'">
+		<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; script-src 'self' 'sha256-e/h31BkVT4O3bF76yVdLhgMHdSuaxrvhczbqp0o9xiw='; font-src 'self'">
 		<link rel="stylesheet" href="default.css">
 		<script src="main.js"></script>
 		<link rel="preload" href="fonts/Rubik-Medium.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<link rel="preload" href="fonts/Rubik-Regular.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<link rel="preload" href="fonts/FiraMono-Regular.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<script>
+			let theme = null;
+			if (window.localStorage) {
+				theme = localStorage.getItem('theme');
+			}
+			if(!theme) {
+				if (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) {
+					theme = 'dark';
+				} else {
+					theme = 'light';
+				}
+			}
+			document.documentElement.className = theme;
+			if (window.localStorage) {
+				localStorage.setItem('theme', theme);
+			}
+		</script>
 	</head>
 	<body>
+		<p class="theme">
+			<button id="light-sw">
+				<svg viewBox="0 0 24 24">
+					<circle cx="12" cy="12" r="5"></circle>
+					<line x1="12" y1="1" x2="12" y2="3"></line>
+					<line x1="12" y1="21" x2="12" y2="23"></line>
+					<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+					<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+					<line x1="1" y1="12" x2="3" y2="12"></line>
+					<line x1="21" y1="12" x2="23" y2="12"></line>
+					<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+					<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+				</svg>
+			</button>
+			<button id="dark-sw">
+				<svg viewBox="0 0 24 24">
+					<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+				</svg>
+			</button>
+		</p>
 		<div class="card">
 			<h2>Password Generator</h2>
 			<p>Always includes at least one lowercase letter, uppercase letter,
@@ -38,5 +75,6 @@
 				<button class="button-primary" id="copy">Copy</button>
 			</p>
 		</div>
+		<p class="footer">An <a href="https://www.unrowdy.com">unrowdy</a> app</p>
 	</body>
 </html>

@@ -35,6 +35,8 @@ button, input {
 
 
 :root {
+	--gray-0: #000000;
+	--gray-1: #131313;
 	--gray-2: #2e2e2e;
 	--gray-3: #4e4e4e;
 	--gray-4: #707070;
@@ -42,6 +44,8 @@ button, input {
 	--gray-7: #e8e8e8;
 	--gray-8: #ffffff;
 	--red-4: #ba545b;
+	--red-6: #fbacae;
+	--cyan-3: #045c5f;
 	--cyan-4: #098285;
 	--cyan-5: #15a9ae;
 	--cyan-6: #59d2d7;
@@ -64,24 +68,52 @@ button, input {
 	--radius: 4px;
 }
 
+.dark {
+	--page: var(--gray-0);
+	--card: var(--gray-1);
+	/*--heading: var(--cyan-5);*/
+	--text: var(--gray-7);
+	/*--link: var(--cyan-5);*/
+	/*--button: var(--cyan-5);*/
+	--button2: var(--gray-3);
+	--input: var(--gray-2);
+	--label: var(--gray-6);
+	--selection: var(--cyan-3);
+	--code-0: var(--gray-2);
+	--code-2: var(--gray-6);
+	--code-4: var(--cyan-6);
+	--code-6: var(--red-6);
+}
+
 body {
 	color: var(--text);
 	background-color: var(--page);
 	font-size: 16px;
 	font-family: 'Rubik', sans-serif;
 	line-height: 1.5;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 100vh;
+	display: grid;
+	grid-template-rows: max-content auto max-content;
+	min-height: 100vh;
 	margin: 0;
 }
+.theme {
+	justify-self: end;
+	padding-right: 24px;
+}
 .card {
-	margin: 12px;
+	margin: 0 24px;
 	padding: 8px 24px;
 	background-color: var(--card);
 	border-radius: var(--radius);
+	width: calc(100% - 96px);
 	max-width: 400px;
+	align-self: center;
+	justify-self: center;
+	overflow: hidden; /* dunno why <code> affects width even though it is working 'scroll' inside <pre> */
+}
+.footer {
+	color: var(--code-2);
+	justify-self: center;
 }
 h2 {
 	color: var(--heading);
@@ -164,4 +196,28 @@ pre > code {
 }
 .number {
 	color: var(--code-6);
+}
+
+#light-sw, #dark-sw {
+	display: block;
+	min-width: 0;
+	padding: 2px;
+	color: var(--code-2);
+	background-color: transparent;
+}
+#light-sw, .dark #dark-sw {
+	display: none;
+}
+.dark #light-sw {
+	display: block;
+}
+svg {
+	display: block;
+	width: 20px;
+	height: 20px;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
 }
