@@ -6,11 +6,11 @@
 		<meta name="description" content="Generate passwords that will meet requirements">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self'; style-src 'self'; script-src 'self' 'sha256-e/h31BkVT4O3bF76yVdLhgMHdSuaxrvhczbqp0o9xiw='; font-src 'self'">
-		<link rel="stylesheet" href="default.css">
-		<script src="main.js"></script>
 		<link rel="preload" href="fonts/Rubik-Medium.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<link rel="preload" href="fonts/Rubik-Regular.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 		<link rel="preload" href="fonts/FiraMono-Regular.subset.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+		<link rel="stylesheet" href="default.css">
+		<script src="main.js"></script>
 		<script>
 			let theme = null;
 			if (window.localStorage) {
@@ -31,7 +31,7 @@
 	</head>
 	<body>
 		<p class="theme">
-			<button id="light-sw">
+			<button id="light-sw" title="Switch to light theme">
 				<svg viewBox="0 0 24 24">
 					<circle cx="12" cy="12" r="5"></circle>
 					<line x1="12" y1="1" x2="12" y2="3"></line>
@@ -44,7 +44,7 @@
 					<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
 				</svg>
 			</button>
-			<button id="dark-sw">
+			<button id="dark-sw" title="Switch to dark theme">
 				<svg viewBox="0 0 24 24">
 					<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
 				</svg>
