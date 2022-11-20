@@ -35,54 +35,64 @@ button, input {
 
 
 :root {
-	--gray-0: #000000;
-	--gray-1: #131313;
-	--gray-2: #2e2e2e;
-	--gray-3: #4e4e4e;
-	--gray-4: #707070;
-	--gray-6: #bebebe;
-	--gray-7: #e8e8e8;
-	--gray-8: #ffffff;
-	--red-4: #ba545b;
-	--red-6: #fbacae;
-	--cyan-3: #045c5f;
-	--cyan-4: #098285;
-	--cyan-5: #15a9ae;
-	--cyan-6: #59d2d7;
+	--gray-0: #ffffff;
+	--gray-1: #eaeaea;
+	--gray-2: #c2c2c2;
+	--gray-3: #9c9c9c;
+	--gray-4l: #767676;
+	--gray-4d: #7f7f7f;
+	--gray-5: #545454;
+	--gray-5d: #505050;
+	--gray-6: #333333;
+	--gray-7: #161616;
+	--gray-8: #000000;
+	--red-2: #ffadae;
+	--red-5: #883c41;
+	--cyan-2: #55d4d9;
+	--cyan-3: #0fadb2;
+	--cyan-4l: #098387;
+	--cyan-4d: #098e92;
+	--cyan-5: #045e61;
 
-	--page: var(--gray-7);
-	--card: var(--gray-8);
-	--heading: var(--cyan-5);
-	--text: var(--gray-2);
-	--link: var(--cyan-5);
-	--button: var(--cyan-5);
-	--button2: var(--gray-6);
-	--input: var(--gray-7);
-	--label: var(--gray-3);
-	--selection: var(--cyan-6);
-	--code-0: var(--gray-7);
-	--code-2: var(--gray-4);
-	--code-4: var(--cyan-4);
-	--code-6: var(--red-4);
-
+	--accent-color: var(--cyan-4l);
+	--hover: var(--cyan-3);
+	--page: var(--gray-1);
+	--card: var(--gray-0);
+	--text: var(--gray-6);
+	--soft: var(--gray-4l);
+	--button2: var(--gray-2);
+	--button2-text: var(--gray-5d);
+	--input: var(--gray-1);
+	--label: var(--gray-5);
+	--selection: var(--cyan-3);
+	--code-0: var(--gray-1);
+	--code-2: var(--gray-5);
+	--code-4: var(--cyan-5);
+	--code-6: var(--red-5);
 	--radius: 4px;
 }
-
 .dark {
-	--page: var(--gray-0);
-	--card: var(--gray-1);
-	/*--heading: var(--cyan-5);*/
-	--text: var(--gray-7);
-	/*--link: var(--cyan-5);*/
-	/*--button: var(--cyan-5);*/
-	--button2: var(--gray-3);
-	--input: var(--gray-2);
-	--label: var(--gray-6);
-	--selection: var(--cyan-3);
-	--code-0: var(--gray-2);
-	--code-2: var(--gray-6);
-	--code-4: var(--cyan-6);
-	--code-6: var(--red-6);
+	--accent-color: var(--cyan-4d);
+	--hover: var(--cyan-3);
+	--page: var(--gray-8);
+	--card: var(--gray-7);
+	--text: var(--gray-2);
+	--soft: var(--gray-4d);
+	--button2: var(--gray-5d);
+	--button2-text: var(--gray-2);
+	--input: var(--gray-6);
+	--label: var(--gray-3);
+	--selection: var(--cyan-5);
+	--code-0: var(--gray-6);
+	--code-2: var(--gray-2);
+	--code-4: var(--cyan-2);
+	--code-6: var(--red-2);
+}
+
+* {
+	border: none;
+	line-height: 1.4;
+	border-radius: 4px;
 }
 
 body {
@@ -112,31 +122,46 @@ body {
 	overflow: hidden; /* dunno why <code> affects width even though it is working 'scroll' inside <pre> */
 }
 .footer {
-	color: var(--code-2);
+	color: var(--soft);
 	justify-self: center;
 }
 h2 {
-	color: var(--heading);
+	color: var(--accent-color);
 	font-weight: 500;
 	margin: 16px 0;
 	font-size: 28px;
 }
+p {
+	margin: 16px 0;
+}
 a {
-	color: var(--link);
+	color: var(--accent-color);
+}
+a:hover {
+	color: var(--hover);
 }
 ::selection {
 	background: var(--selection);
+}
+
+.card, input {
+	color: var(--text);
+}
+input, button {
+	line-height: 1.2;
 }
 
 .buttons {
 	display: flex;
 	justify-content: space-around;
 	padding: 8px 0;
+	align-items: center;
+	margin: 8px 0;
 }
 button {
 	min-width: 88px;
 	padding: 8px 12px;
-	color: var(--label);
+	color: var(--button2-text);
 	background-color: var(--button2);
 	border: none;
 	border-radius: var(--radius);
@@ -146,10 +171,17 @@ button:focus, input:focus, a:focus {
 }
 .button-primary {
 	color: var(--card);
-	background-color: var(--button);
+	background-color: var(--accent-color);
+}
+button:hover {
+	background: var(--soft);
+}
+.button-primary:hover {
+	background: var(--hover);
 }
 label {
 	color: var(--label);
+	margin-top: 16px;
 }
 input:not([type="checkbox"]), select, textarea {
 	color: inherit;
@@ -160,17 +192,17 @@ input:not([type="checkbox"]), select, textarea {
 	border: none;
 	border-radius: var(--radius);
 	display: block;
-	margin-bottom: 16px;
+	margin: 4px 0;
 }
 
 input[type="checkbox"] {
 	height: 16px;
 	width: 16px;
-	accent-color: var(--button);
+	accent-color: var(--accent-color);
 }
 
 input:disabled {
-	color: var(--gray-4);
+	color: var(--soft);
 }
 
 pre, code {
@@ -202,7 +234,11 @@ pre > code {
 	display: block;
 	min-width: 0;
 	padding: 2px;
-	color: var(--code-2);
+	color: var(--soft);
+	background-color: transparent;
+}
+#light-sw:hover, #dark-sw:hover {
+	color: var(--label);
 	background-color: transparent;
 }
 #light-sw, .dark #dark-sw {
