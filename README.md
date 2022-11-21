@@ -12,3 +12,16 @@ To generate passwords that will actually meet the requirements of the sites you 
   * No pointless options like "allow digits" or "allow uppercase"
   * You can copy/paste a list of allowed special characters for sites that require that
   * URL safe option in case a site really can't handle anything complicated
+  * Passwords generated locally using the Web Crypto API
+
+## Todo
+
+  * PWA things
+  * Plausible snippet
+  * Update screenshot
+  * Feather icon license?
+  * Move csp to http header?
+  * Reminder to update csp hash (via Chrome console message) when changing inline js
+  * settings in localstorage - and option to save character sets?
+  * copy complete indicator
+  * intentionally? missing space and backslash in character list
